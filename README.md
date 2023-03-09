@@ -1,6 +1,6 @@
 # Install Maven, Git, Java and Ansible 
 
-You can create a script to automate the installation process of Maven, Git, Java and Ansible. Here's an example:
+You can create a script to automate the installation process of Maven, Git, Java and Ansible. [Here's an example](/install-java-git-maven-ansible.sh).
 
 1. Open a text editor on your Linux system.
 2. Copy and paste the following code into the text editor:
