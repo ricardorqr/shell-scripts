@@ -3,36 +3,7 @@
 You can create a script to automate the installation process of Maven, Git, Java and Ansible. [Here's an example](/install-java-git-maven-ansible.sh).
 
 1. Open a text editor on your Linux system.
-2. Copy and paste the following code into the text editor:
-
-```shell
-#!/bin/bash
-
-# Update package list
-sudo yum update -y
-
-# Install Maven, Git, and Java 11
-sudo yum install ansible maven git java-11-openjdk-devel -y
-
-# Install Ansible
-sudo amazon-linux-extras install ansible2 -y
-
-# Check Ansible version
-ansible --version
-
-# Check Maven version
-mvn -version
-
-# Check Git version
-git --version
-
-# Check Java version
-java -version
-
-# Update package list
-sudo yum update -y
-```
-
+2. Copy and paste the [example](/install-java-git-maven-ansible.sh) code into the text editor.
 3. Save the file as `install.sh`.
 4. Open the terminal on your Linux system and navigate to the directory where you saved the `install.sh` file.
 5. Run the following command to make the script executable:
