@@ -19,11 +19,16 @@ unzip awscliv2.zip
 sudo ./aws/install
 
 # Install Kubectl
-curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.25.6/2023-01-30/bin/linux/arm64/kubectl
-curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.25.6/2023-01-30/bin/linux/arm64/kubectl.sha256
-chmod +x ./kubectl
-mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
-echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
+sudo curl -LO "https://dl.k8s.io/release/$(curl -LO https://dl.k8s.io/release/v1.25.0/bin/linux/amd64/kubectl)/bin/linux/amd64/kubectl"
+sudo curl -LO "https://dl.k8s.io/$(curl -LO https://dl.k8s.io/release/v1.25.0/bin/linux/amd64/kubectl)/bin/linux/amd64/kubectl.sha256"
+echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+#curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.25.6/2023-01-30/bin/linux/arm64/kubectl
+#curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.25.6/2023-01-30/bin/linux/arm64/kubectl.sha256
+#chmod +x ./kubectl
+#mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
+#echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
 
 # Install EKSCTL
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
