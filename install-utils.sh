@@ -4,7 +4,6 @@
 sudo yum upgrade -y
 
 # Install Java 11
-#sudo yum install java-11-openjdk-devel -y
 sudo amazon-linux-extras install java-openjdk11 -y
 
 # Install Maven
