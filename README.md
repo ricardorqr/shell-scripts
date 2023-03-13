@@ -18,5 +18,5 @@ chmod +x install.sh
 6. Run the script using the following command:
 
 ```shell
-./FILE_NAME.sh
+./install.sh
 ```
