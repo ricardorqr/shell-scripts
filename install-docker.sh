@@ -8,7 +8,9 @@ sudo yum install docker -y
 
 # Initiate the service
 sudo systemctl start docker
+
 sudo systemctl enable docker
+
 sudo systemctl status docker
 
 # Add permissions
