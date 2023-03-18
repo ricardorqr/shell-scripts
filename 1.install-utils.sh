@@ -3,6 +3,10 @@
 # Update package list
 sudo yum upgrade -y
 
+# Install PIP
+sudo amazon-linux-extras install epel -y
+sudo yum install python3-pip
+
 # Install Java 11
 sudo amazon-linux-extras install java-openjdk11 -y
 
@@ -13,7 +17,7 @@ sudo yum install maven -y
 sudo yum install git -y
 
 # Install Ansible
-sudo amazon-linux-extras install ansible2 -y
+sudo pip3 install ansible
 
 # Install Terraform
 sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
@@ -36,6 +40,9 @@ sudo mv /tmp/eksctl /usr/local/bin
 
 # Update package list
 sudo yum upgrade -y
+
+echo "=============== PIP3 ==============="
+pip3 --version
 
 echo "=============== Ansible ==============="
 ansible --version

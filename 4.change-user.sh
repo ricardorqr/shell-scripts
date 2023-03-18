@@ -4,7 +4,7 @@
 sudo yum upgrade -y
 
 # Add Jenkins user in the file sudoers
-sudo vi cat /etc/sudoers
+sudo vi /etc/sudoers
 jenkins  	ALL=(ALL)	NOPASSWD: ALL
 
 # Create AWS credential to ec2-user user
